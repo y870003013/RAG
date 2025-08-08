@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: rag-study-app
+  profiles:
+    active: dev
