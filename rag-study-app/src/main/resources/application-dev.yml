@@ -17,11 +17,16 @@ spring:
   ai:
     ollama:
       base-url: http://103.117.136.91:11434
+      embedding:
+        options:
+          num-batch: 512
+        model: nomic-embed-text
   datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://127.0.0.1:3306/xfg_frame_archetype?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://103.117.136.91:15432/ai-rag-knowledge
+    type: com.zaxxer.hikari.HikariDataSource
   hikari:
     pool-name: Retail_HikariCP
     minimum-idle: 15 #最小空闲连接数量
